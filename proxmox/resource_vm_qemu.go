@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	pxapi "github.com/Telmate/proxmox-api-go/proxmox"
+	pxapi "github.com/esviderskii/proxmox-api-go/proxmox"
 	//pxapi "github.com/doransmestad/proxmox-api-go/proxmox"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
@@ -639,6 +639,41 @@ func resourceVmQemu() *schema.Resource {
 				Optional: true,
 				ForceNew: true,
 			},
+			"ipconfig3": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
+			"ipconfig4": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
+			"ipconfig5": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
+			"ipconfig6": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
+			"ipconfig7": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
+			"ipconfig8": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
+			"ipconfig9": {
+				Type:     schema.TypeString,
+				Optional: true,
+				ForceNew: true,
+			},
 			"preprovision": {
 				Type:          schema.TypeBool,
 				Optional:      true,
@@ -727,6 +762,13 @@ func resourceVmQemuCreate(d *schema.ResourceData, meta interface{}) error {
 		Ipconfig0:    d.Get("ipconfig0").(string),
 		Ipconfig1:    d.Get("ipconfig1").(string),
 		Ipconfig2:    d.Get("ipconfig2").(string),
+		Ipconfig3:    d.Get("ipconfig3").(string),
+		Ipconfig4:    d.Get("ipconfig4").(string),
+		Ipconfig5:    d.Get("ipconfig5").(string),
+		Ipconfig6:    d.Get("ipconfig6").(string),
+		Ipconfig7:    d.Get("ipconfig7").(string),
+		Ipconfig8:    d.Get("ipconfig8").(string),
+		Ipconfig9:    d.Get("ipconfig9").(string),
 		// Deprecated single disk config.
 		Storage:  d.Get("storage").(string),
 		DiskSize: d.Get("disk_gb").(float64),
@@ -969,6 +1011,13 @@ func resourceVmQemuUpdate(d *schema.ResourceData, meta interface{}) error {
 		Ipconfig0:    d.Get("ipconfig0").(string),
 		Ipconfig1:    d.Get("ipconfig1").(string),
 		Ipconfig2:    d.Get("ipconfig2").(string),
+		Ipconfig3:    d.Get("ipconfig3").(string),
+		Ipconfig4:    d.Get("ipconfig4").(string),
+		Ipconfig5:    d.Get("ipconfig5").(string),
+		Ipconfig6:    d.Get("ipconfig6").(string),
+		Ipconfig7:    d.Get("ipconfig7").(string),
+		Ipconfig8:    d.Get("ipconfig8").(string),
+		Ipconfig9:    d.Get("ipconfig9").(string),
 		// Deprecated single disk config.
 		Storage:  d.Get("storage").(string),
 		DiskSize: d.Get("disk_gb").(float64),
@@ -1098,6 +1147,13 @@ func _resourceVmQemuRead(d *schema.ResourceData, meta interface{}) error {
 	d.Set("ipconfig0", config.Ipconfig0)
 	d.Set("ipconfig1", config.Ipconfig1)
 	d.Set("ipconfig2", config.Ipconfig2)
+	d.Set("ipconfig3", config.Ipconfig3)
+	d.Set("ipconfig4", config.Ipconfig4)
+	d.Set("ipconfig5", config.Ipconfig5)
+	d.Set("ipconfig6", config.Ipconfig6)
+	d.Set("ipconfig7", config.Ipconfig7)
+	d.Set("ipconfig8", config.Ipconfig8)
+	d.Set("ipconfig9", config.Ipconfig9)
 
 	// Some dirty hacks to populate undefined keys with default values.
 	checkedKeys := []string{"clone_wait", "force_create", "full_clone", "define_connection_info", "preprovision"}
