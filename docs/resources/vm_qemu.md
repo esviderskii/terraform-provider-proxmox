@@ -168,6 +168,13 @@ The following arguments are specifically for Cloud-init for preprovisioning.
 * `ipconfig0` - (Optional) Cloud-init specific, [gw=<GatewayIPv4>] [,gw6=<GatewayIPv6>] [,ip=<IPv4Format/CIDR>] [,ip6=<IPv6Format/CIDR>]
 * `ipconfig1` - (Optional) Cloud-init specific, see ipconfig0
 * `ipconfig2` - (Optional) Cloud-init specific, see ipconfig0
+* `ipconfig3` - (Optional) Cloud-init specific, see ipconfig0
+* `ipconfig4` - (Optional) Cloud-init specific, see ipconfig0
+* `ipconfig5` - (Optional) Cloud-init specific, see ipconfig0
+* `ipconfig6` - (Optional) Cloud-init specific, see ipconfig0
+* `ipconfig7` - (Optional) Cloud-init specific, see ipconfig0
+* `ipconfig8` - (Optional) Cloud-init specific, see ipconfig0
+* `ipconfig9` - (Optional) Cloud-init specific, see ipconfig0
 
 Deprecated arguments.
 
